@@ -242,6 +242,50 @@
             50% { transform: translateY(-5px); }
         }
 
+        .font-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: rgba(17, 7, 30, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 12px 18px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: langFloat 4s ease-in-out infinite;
+        }
+
+        .font-btn {
+            background: linear-gradient(135deg, var(--purple-mid), var(--pink-bright));
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+        }
+
+        .font-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.8);
+        }
+
+        body.simple-font .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        body.simple-font .spanish-note,
+        body.simple-font .english-note {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+        }
+
         .lang-btn {
             background: transparent;
             color: rgba(255, 255, 255, 0.6);
@@ -666,6 +710,199 @@
             text-align: center;
         }
 
+        .download-btn {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(236, 72, 153, 0.4));
+            backdrop-filter: blur(15px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(236, 72, 153, 0.6);
+        }
+
+        .countdown-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-container {
+            margin: 40px 0;
+        }
+
+        .countdown-display {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            animation: countdownPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes countdownPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.2));
+            backdrop-filter: blur(15px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            min-width: 120px;
+        }
+
+        .countdown-number {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #c4b5fd, #f0abfc, #fda4af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .countdown-separator {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: rgba(236, 72, 153, 0.8);
+            font-weight: 700;
+            animation: separatorBlink 2s ease-in-out infinite;
+        }
+
+        @keyframes separatorBlink {
+            0%, 49%, 100% { opacity: 1; }
+            50%, 99% { opacity: 0.3; }
+        }
+
+        .hug-btn {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.5), rgba(139, 92, 246, 0.4));
+            backdrop-filter: blur(15px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-top: 30px;
+        }
+
+        .hug-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 20px 60px rgba(236, 72, 153, 0.7);
+        }
+
+        .hug-btn:active {
+            transform: scale(0.95);
+        }
+
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .milestone-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.1));
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: cardFloat 1s ease backwards;
+            animation-delay: calc(var(--index) * 0.1s);
+            text-align: center;
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);
+            border-color: rgba(236, 72, 153, 0.4);
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(139, 92, 246, 0.25));
+            border: 2px solid rgba(236, 72, 153, 0.5);
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
+            animation: highlightGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes highlightGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(236, 72, 153, 0.7); }
+        }
+
+        .milestone-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        .milestone-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: rgba(251, 207, 232, 1);
+            margin-bottom: 10px;
+        }
+
+        .milestone-date {
+            font-size: 1rem;
+            color: rgba(167, 139, 250, 1);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .milestone-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .heart-animation {
+            position: fixed;
+            font-size: 3rem;
+            pointer-events: none;
+            z-index: 10000;
+            animation: floatHeart 3s ease-out forwards;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.5) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-500px) scale(1.5) rotate(360deg);
+            }
+        }
+
         .image-modal {
             display: none;
             position: fixed;
@@ -863,9 +1100,20 @@
                 padding: 8px 12px;
             }
 
+            .font-toggle {
+                top: 15px;
+                left: 15px;
+                padding: 8px 12px;
+            }
+
             .lang-btn {
                 padding: 6px 15px;
                 font-size: 0.8rem;
+            }
+
+            .font-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
             }
 
             .reasons-grid {
@@ -912,6 +1160,12 @@
     <div class="lang-toggle">
         <button class="lang-btn active" onclick="setLanguage('en')" data-lang="en">English</button>
         <button class="lang-btn" onclick="setLanguage('es')" data-lang="es">Español</button>
+    </div>
+
+    <div class="font-toggle">
+        <button class="font-btn active" onclick="toggleFont()" id="fontBtn">
+            <span>Aa</span>
+        </button>
     </div>
 
     <div class="bg-shapes">
@@ -1146,6 +1400,99 @@
                         </div>
                         <button class="slide-btn" onclick="changeSlide(1)">&#10095;</button>
                     </div>
+                    <button class="download-btn" onclick="downloadCurrentImage()">
+                        <span class="lang-en">📥 Download Photo</span>
+                        <span class="lang-es hidden">📥 Descargar Foto</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="page" data-page="8">
+                <h1 class="page-title lang-en">Until We Meet ♥</h1>
+                <h1 class="page-title lang-es hidden">Hasta Que Nos Encontremos ♥</h1>
+                <div class="page-content countdown-page">
+                    <div class="countdown-container">
+                        <div class="countdown-display">
+                            <div class="countdown-unit">
+                                <div class="countdown-number" id="days">000</div>
+                                <div class="countdown-label lang-en">Days</div>
+                                <div class="countdown-label lang-es hidden">Días</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-unit">
+                                <div class="countdown-number" id="hours">00</div>
+                                <div class="countdown-label lang-en">Hours</div>
+                                <div class="countdown-label lang-es hidden">Horas</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-unit">
+                                <div class="countdown-number" id="minutes">00</div>
+                                <div class="countdown-label lang-en">Minutes</div>
+                                <div class="countdown-label lang-es hidden">Minutos</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-unit">
+                                <div class="countdown-number" id="seconds">00</div>
+                                <div class="countdown-label lang-en">Seconds</div>
+                                <div class="countdown-label lang-es hidden">Segundos</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spanish-note lang-en">
+                        "Every second brings us closer to the moment I've been dreaming about — seeing your beautiful smile in person, holding your hand, and finally being together. I can't wait! ♥"
+                    </div>
+                    <div class="spanish-note lang-es hidden">
+                        "Cada segundo nos acerca al momento con el que he estado soñando — ver tu hermosa sonrisa en persona, tomar tu mano y finalmente estar juntos. ¡No puedo esperar! ♥"
+                    </div>
+
+                    <button class="hug-btn" onclick="sendHug()">
+                        <span>🤗 Send Virtual Hug</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="page" data-page="9">
+                <h1 class="page-title lang-en">Important Moments</h1>
+                <h1 class="page-title lang-es hidden">Momentos Importantes</h1>
+                <div class="page-content">
+                    <div class="milestones-grid">
+                        <div class="milestone-card" style="--index: 0">
+                            <div class="milestone-icon">💝</div>
+                            <div class="milestone-title lang-en">First Message</div>
+                            <div class="milestone-title lang-es hidden">Primer Mensaje</div>
+                            <div class="milestone-date">March 2025</div>
+                            <div class="milestone-text lang-en">The day our journey began</div>
+                            <div class="milestone-text lang-es hidden">El día que comenzó nuestro viaje</div>
+                        </div>
+
+                        <div class="milestone-card" style="--index: 1">
+                            <div class="milestone-icon">💖</div>
+                            <div class="milestone-title lang-en">Became Official</div>
+                            <div class="milestone-title lang-es hidden">Nos Hicimos Oficiales</div>
+                            <div class="milestone-date">March 2025</div>
+                            <div class="milestone-text lang-en">When you said yes and changed my world</div>
+                            <div class="milestone-text lang-es hidden">Cuando dijiste sí y cambiaste mi mundo</div>
+                        </div>
+
+                        <div class="milestone-card" style="--index: 2">
+                            <div class="milestone-icon">🎮</div>
+                            <div class="milestone-title lang-en">First Game Together</div>
+                            <div class="milestone-title lang-es hidden">Primer Juego Juntos</div>
+                            <div class="milestone-date">March 2025</div>
+                            <div class="milestone-text lang-en">Playing Roblox and making memories</div>
+                            <div class="milestone-text lang-es hidden">Jugando Roblox y creando recuerdos</div>
+                        </div>
+
+                        <div class="milestone-card highlight-card" style="--index: 3">
+                            <div class="milestone-icon">✨</div>
+                            <div class="milestone-title lang-en">Meeting Day!</div>
+                            <div class="milestone-title lang-es hidden">¡Día del Encuentro!</div>
+                            <div class="milestone-date">July 21, 2027</div>
+                            <div class="milestone-text lang-en">The day we finally meet in person!</div>
+                            <div class="milestone-text lang-es hidden">¡El día que finalmente nos conoceremos en persona!</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1194,6 +1541,25 @@
                 particleCount: 50,
                 spread: 60,
                 origin: { y: 0.1, x: 0.9 },
+                colors: ['#8b5cf6', '#ec4899', '#fbbf24']
+            });
+        }
+
+        let simpleFontEnabled = false;
+
+        function toggleFont() {
+            simpleFontEnabled = !simpleFontEnabled;
+            
+            if (simpleFontEnabled) {
+                document.body.classList.add('simple-font');
+            } else {
+                document.body.classList.remove('simple-font');
+            }
+
+            confetti({
+                particleCount: 50,
+                spread: 60,
+                origin: { y: 0.1, x: 0.1 },
                 colors: ['#8b5cf6', '#ec4899', '#fbbf24']
             });
         }
@@ -1341,7 +1707,7 @@
         createStars();
 
         let currentPage = 1;
-        const totalPages = 7;
+        const totalPages = 9;
 
         function updateNavigation() {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
@@ -1516,6 +1882,77 @@
                 currentPage === 7 ? changeSlide(-1) : previousPage();
             }
         });
+
+        function updateCountdown() {
+            const meetingDate = new Date('2027-07-21T00:00:00');
+            const now = new Date();
+            const difference = meetingDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(3, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '000';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        function downloadCurrentImage() {
+            const slides = document.querySelectorAll('.slide');
+            const activeSlide = slides[currentSlideIndex - 1];
+            const img = activeSlide.querySelector('img');
+            
+            const link = document.createElement('a');
+            link.href = img.src;
+            link.download = `memory-${currentSlideIndex}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#8b5cf6', '#ec4899', '#fbbf24']
+            });
+        }
+
+        function sendHug() {
+            const hearts = ['❤️', '💕', '💖', '💗', '💓', '💝', '💞'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-animation';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * window.innerWidth + 'px';
+                    heart.style.top = window.innerHeight + 'px';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 100);
+            }
+
+            confetti({
+                particleCount: 150,
+                spread: 180,
+                origin: { y: 0.5, x: 0.5 },
+                colors: ['#ec4899', '#f472b6', '#fb7185', '#fda4af'],
+                shapes: ['circle'],
+                scalar: 2
+            });
+        }
 
         window.addEventListener('load', () => {
             updateNavigation();
